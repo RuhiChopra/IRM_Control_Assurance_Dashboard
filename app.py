@@ -48,10 +48,9 @@ with c1:
     ))
     fig_bar.add_trace(go.Bar(
         x=tier1_df['Application Name'], y=tier1_df['Actual RTO (Hrs)'],
-        name='Actual RTO', marker_color='#00b050' # Manulife Green-ish
+        name='Actual RTO', marker_color='#00b050' 
     ))
     fig_bar.update_layout(barmode='group', title="Tier 1 Critical Apps - Recovery Time Performance")
-    # FIXED: Removed use_container_width to fix warning
     st.plotly_chart(fig_bar)
 
 with c2:
@@ -63,7 +62,6 @@ with c2:
     fig_pie = px.pie(fail_counts, values='Failed Tests', names='Department', 
                      title="Departments with Highest DR Control Failures",
                      color_discrete_sequence=px.colors.sequential.RdBu)
-    # FIXED: Removed use_container_width to fix warning
     st.plotly_chart(fig_pie)
 
 # --- CHARTS ROW 2 ---
@@ -78,15 +76,14 @@ with c3:
                              color='Criticality Tier', size='Ticket Age (Days)',
                              color_discrete_map={'Tier 1 (Critical)': 'red', 'Tier 2 (High)': 'orange', 'Tier 3 (Standard)': 'blue'},
                              title="Aging of Open DR Remediation Tickets")
-    # FIXED: Removed use_container_width to fix warning
     st.plotly_chart(fig_scatter)
 
 with c4:
     st.subheader("🔍 Non-Compliant Assets")
-    # FIXED: Corrected the column name below from 'Ticket ID' to 'Remediation Ticket ID'
     failed_apps = df[df['Test Status'] == 'Fail'][['Application Name', 'Criticality Tier', 'Remediation Ticket ID']]
     st.dataframe(failed_apps, hide_index=True)
 
 # --- FOOTER ---
 st.markdown("---")
+
 st.caption("Created by Ruhi Chopra | Tech Stack: Python, Pandas, Plotly (Designed to simulate Power BI reporting flow)")
