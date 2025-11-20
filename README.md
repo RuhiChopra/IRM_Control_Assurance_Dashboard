@@ -27,7 +27,7 @@ In the context of **Control Assurance (ISO 27001 / NIST)**, this dashboard solve
 ### 🚀 How to Run This Project
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/manulife-dr-compliance.git
+    git clone https://github.com/YOUR_USERNAME/IRM_Control_Assurance_Dashboard.git
     ```
 2.  Install requirements:
     ```bash
